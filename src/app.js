@@ -4,6 +4,7 @@ const geocord = require('./utils/geocord')
 const forcast = require('./utils/forcast')
 const hbs = require('hbs');
 const app = express();
+const port = process.env.PORT || 4000
 
 
 const publicDerectory = path.join(__dirname, '../public')
@@ -74,6 +75,6 @@ app.get('*', (req, res) =>{
         err: '404'
     })
 })
-app.listen(4000, ()=>{
-    console.log('Server Is Running in 4000 Port ');
+app.listen(port, ()=>{
+    console.log('Server Is Running in  Port '+ port);
 });
